@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-class CreateCountryScreen extends StatefulWidget {
+class CreateMovieScreen extends StatefulWidget {
   @override
-  _CreateCountryScreenState createState() => _CreateCountryScreenState();
+  _CreateMovieScreenState createState() => _CreateMovieScreenState();
 }
 
-class _CreateCountryScreenState extends State<CreateCountryScreen> {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _capitalController = TextEditingController();
-  final TextEditingController _populationController = TextEditingController();
-  final TextEditingController _languageController = TextEditingController();
+class _CreateMovieScreenState extends State<CreateMovieScreen> {
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _directorController = TextEditingController();
+  final TextEditingController _releaseYearController = TextEditingController();
+  final TextEditingController _durationController = TextEditingController();
+  final TextEditingController _genreController = TextEditingController();
+  final TextEditingController _imageUrlController = TextEditingController();
 
-  void _createCountry() async {
+  void _createMovie() async {
     final HttpLink httpLink = HttpLink(
-      'http://127.0.0.1:8000/graphql/', // Cambiado para incluir la URL como argumento
+      'http://34.174.30.44:8080/graphql/', // Asegúrate de que esta URL sea correcta
     );
 
     final GraphQLClient client = GraphQLClient(
@@ -24,29 +26,34 @@ class _CreateCountryScreenState extends State<CreateCountryScreen> {
 
     final MutationOptions options = MutationOptions(
       document: gql('''
-        mutation CreateCountry(\$name: String!, \$capital: String!, \$population: Int!, \$language: String!) {
-          createCountry(name: \$name, capital: \$capital, population: \$population, language: \$language) {
-            name
-            capital
-            population
-            language
+        mutation CreateLink(\$title: String!, \$director: String!, \$releaseYear: Int!, \$duration: Int!, \$genre: String!, \$imageUrl: String!) {
+          createLink(title: \$title, director: \$director, releaseYear: \$releaseYear, duration: \$duration, genre: \$genre, imageUrl: \$imageUrl) {
+            id
+            title
+            director
+            releaseYear
+            duration
+            genre
+            imageUrl
           }
         }
       '''),
       variables: <String, dynamic>{
-        'name': _nameController.text,
-        'capital': _capitalController.text,
-        'population': int.parse(_populationController.text),
-        'language': _languageController.text,
+        'title': _titleController.text,
+        'director': _directorController.text,
+        'releaseYear': int.parse(_releaseYearController.text),
+        'duration': int.parse(_durationController.text),
+        'genre': _genreController.text,
+        'imageUrl': _imageUrlController.text,
       },
     );
 
     final QueryResult result = await client.mutate(options);
 
     if (!result.hasException) {
-      // País creado exitosamente
+      // Película creada exitosamente
       // Puedes realizar alguna acción adicional si es necesario
-      print('País creado exitosamente');
+      print('Película creada exitosamente');
     } else {
       // Mostrar mensaje de error
       showDialog(
@@ -54,7 +61,7 @@ class _CreateCountryScreenState extends State<CreateCountryScreen> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text('Error'),
-            content: Text('No se pudo crear el país. Intente de nuevo.'),
+            content: Text('No se pudo crear la película. Intente de nuevo.'),
             actions: <Widget>[
               TextButton(
                 child: Text('Cerrar'),
@@ -73,7 +80,7 @@ class _CreateCountryScreenState extends State<CreateCountryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Crear país'),
+        title: Text('Crear película'),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -81,34 +88,47 @@ class _CreateCountryScreenState extends State<CreateCountryScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextField(
-              controller: _nameController,
+              controller: _titleController,
               decoration: InputDecoration(
-                labelText: 'Nombre del país',
+                labelText: 'Título de la película',
               ),
             ),
             TextField(
-              controller: _capitalController,
+              controller: _directorController,
               decoration: InputDecoration(
-                labelText: 'Capital',
+                labelText: 'Director',
               ),
             ),
             TextField(
-              controller: _populationController,
+              controller: _releaseYearController,
               decoration: InputDecoration(
-                labelText: 'Población',
+                labelText: 'Año de lanzamiento',
               ),
               keyboardType: TextInputType.number,
             ),
             TextField(
-              controller: _languageController,
+              controller: _durationController,
+               decoration: InputDecoration(
+                labelText: 'Duración (minutos)',
+              ),
+              keyboardType: TextInputType.number,
+            ),
+            TextField(
+              controller: _genreController,
               decoration: InputDecoration(
-                labelText: 'Idioma',
+                labelText: 'Genero',
+              ),
+            ),
+            TextField(
+              controller: _imageUrlController,
+              decoration: InputDecoration(
+                labelText: 'URL de la imagen',
               ),
             ),
             SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed: _createCountry,
-              child: Text('Crear país'),
+              onPressed: _createMovie,
+              child: Text('Crear película'),
             ),
           ],
         ),

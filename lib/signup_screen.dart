@@ -16,7 +16,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
   void _signupUser() async {
     final HttpLink httpLink = HttpLink(
-      'http://127.0.0.1:8000/graphql/',
+      'http://34.174.30.44:8080/graphql/',
     );
 
     final GraphQLClient client = GraphQLClient(

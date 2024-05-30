@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _loginUser() async {
     final HttpLink httpLink = HttpLink(
-      'http://127.0.0.1:8000/graphql/',
+      'http://34.174.30.44:8080/graphql/',
     );
 
     final GraphQLClient client = GraphQLClient(
@@ -51,6 +51,15 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     } else {
       _showErrorDialog('Usuario o contraseña incorrectos.');
+    }
+  }
+
+  void _checkToken() async {
+    final String? token = await storage.read(key: 'token');
+    if (token != null) {
+      print('Token JWT: $token');
+    } else {
+      print('Token JWT no encontrado en el almacenamiento local.');
     }
   }
 
