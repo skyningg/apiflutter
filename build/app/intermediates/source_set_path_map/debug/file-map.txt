@@ -1,0 +1,16 @@
+com.example.flutter_countries.app-jetified-security-crypto-1.1.0-alpha06-0 C:\Users\skyning\.gradle\caches\transforms-3\30a87167848b502704ff9037baa96658\transformed\jetified-security-crypto-1.1.0-alpha06\res
+com.example.flutter_countries.app-core-1.6.0-1 C:\Users\skyning\.gradle\caches\transforms-3\3a2f4d98b3b6404c1fa5be33c6d33808\transformed\core-1.6.0\res
+com.example.flutter_countries.app-jetified-window-1.0.0-beta04-2 C:\Users\skyning\.gradle\caches\transforms-3\3fc6841a625c2f6f798513da4342f64b\transformed\jetified-window-1.0.0-beta04\res
+com.example.flutter_countries.app-jetified-window-java-1.0.0-beta04-3 C:\Users\skyning\.gradle\caches\transforms-3\5b1943f6022f031876b1bcc4cd6f58e6\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.flutter_countries.app-jetified-annotation-experimental-1.1.0-4 C:\Users\skyning\.gradle\caches\transforms-3\f3b777a6e3202e8f617aa95a18bb10d0\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.flutter_countries.app-debug-5 C:\Users\skyning\api\android\app\src\debug\res
+com.example.flutter_countries.app-main-6 C:\Users\skyning\api\android\app\src\main\res
+com.example.flutter_countries.app-pngs-7 C:\Users\skyning\api\build\app\generated\res\pngs\debug
+com.example.flutter_countries.app-resValues-8 C:\Users\skyning\api\build\app\generated\res\resValues\debug
+com.example.flutter_countries.app-rs-9 C:\Users\skyning\api\build\app\generated\res\rs\debug
+com.example.flutter_countries.app-mergeDebugResources-10 C:\Users\skyning\api\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.flutter_countries.app-mergeDebugResources-11 C:\Users\skyning\api\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.flutter_countries.app-merged_res-12 C:\Users\skyning\api\build\app\intermediates\merged_res\debug
+com.example.flutter_countries.app-packaged_res-13 C:\Users\skyning\api\build\connectivity_plus\intermediates\packaged_res\debug
+com.example.flutter_countries.app-packaged_res-14 C:\Users\skyning\api\build\flutter_secure_storage\intermediates\packaged_res\debug
+com.example.flutter_countries.app-packaged_res-15 C:\Users\skyning\api\build\path_provider_android\intermediates\packaged_res\debug
