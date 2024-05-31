@@ -83,7 +83,11 @@ class LinkWidget extends StatelessWidget {
       ) {
         return ListTile(
           title: Text(title),
+<<<<<<< HEAD
           subtitle: Text('$director\n$genre, $releaseYear\n$duration\n$imageUrl\n$votes votes | by $postedBy'),
+=======
+          subtitle: Text('$director\n$votes votes | by $postedBy'),
+>>>>>>> ca8cfa1266450446d19c3cac3aae53d8b02355bb
           trailing: InkWell(
             onTap: () async {
               final authToken = await storage.read(key: 'jwt_token');

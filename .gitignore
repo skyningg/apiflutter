@@ -7,6 +7,10 @@
 .pub/
 
 # Flutter builds
+<<<<<<< HEAD
+=======
+build/
+>>>>>>> ca8cfa1266450446d19c3cac3aae53d8b02355bb
 
 # iOS
 .generated/
